@@ -3,7 +3,7 @@
     <el-upload
       class="upload-demo"
       drag
-      action="http://127.0.0.1:9901/imgeUpdate"
+      action="http://118.190.162.218:9901/imgeUpdate"
       :on-error="error"
       :before-upload="beforeUpload"
       :on-success="success"
