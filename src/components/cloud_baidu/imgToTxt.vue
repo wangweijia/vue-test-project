@@ -111,8 +111,21 @@ export default {
 
       this.loading = false;
     },
-    beforeUpload() {
-      this.loading = true;
+    beforeUpload(file) {
+      console.log(file);
+      const { size } = file;
+      const sizeLimt = 2 * 1024 * 1204;
+      if (size < sizeLimt) {
+        this.loading = true;
+        return true;
+      }
+
+      this.$notify.error({
+        title: '错误',
+        message: '目前图片大小不能超过2M'
+      });
+
+      return false;
     },
     error(err) {
       this.loading = false;
