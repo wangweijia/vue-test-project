@@ -62,6 +62,9 @@ export default {
         temperature: {
           min: 0,
           nice: true,
+          formatter: (val) => {
+            return `${val}%`;
+          }
         },
       });
 
@@ -72,7 +75,11 @@ export default {
 
       chart.line()
         .position('date*temperature')
-        .label('temperature');
+        .label('temperature', (val) => {
+          return {
+            content: `${val}%`,
+          }
+        });
       chart.point().position('date*temperature');
 
       chart.render();
