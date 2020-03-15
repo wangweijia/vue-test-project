@@ -1,5 +1,5 @@
 <template>
-  <div ref="container" />
+  <div ref="container" class="box-root" />
 </template>
 
 <script>
@@ -82,5 +82,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
+
+.box-root {
+  background-color: #ffffff;
+  // border: solid 1px #000000;
+}
 
 </style>
