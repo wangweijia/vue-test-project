@@ -2,15 +2,19 @@
   <div class="page" >
     <h1>市场情绪</h1>
     <Emotion/>
+    <h1>北向资金</h1>
+    <NorthwardCapital/>
   </div>
 </template>
 
 <script>
 import Emotion from './emotion';
+import NorthwardCapital from './northwardCapital';
 
 export default {
   components: {
-    Emotion
+    Emotion,
+    NorthwardCapital
   }
 
 }

@@ -5,6 +5,6 @@ const envs = {
   pro: 'pro'
 }
 
-const env = envs.pro;
+const env = envs.dev;
 
 export default env;

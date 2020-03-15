@@ -1,5 +1,5 @@
 <template>
-  <div ref="container" class="box-root" />
+  <div ref="container" />
 </template>
 
 <script>
@@ -10,26 +10,24 @@ import moment from 'moment';
 export default {
   data() {
     return {
-      data: [],
-      // width: 100,
-      height: 500
+      data: []
     }
   },
   mounted() {
-    this.getDate().then((data) => {
+    this.getDate().then(()=>{
       this.init();
-    });
+    })
   },
   methods: {
     getDate() {
-      return Request.get('emotion', {
+      return Request.get('northwardCapital', {
         limit: 7,
         sort: -1
       }).then((res) => {
         return res.map((item) => {
-          const { market_temperature, date } = item;
+          const { count, date } = item;
           return {
-            temperature: Math.round(market_temperature),
+            count: Number((count/10000).toFixed(2)),
             date: moment(Number(date)).format('MM-DD'),
           }
         })
@@ -48,38 +46,39 @@ export default {
       const chart = new Chart({
         container: container,
         autoFit: true,
-        height: this.height,
-        // width: this.width
+        height: 500,
       });
+      chart.data(data);
       this.chart = chart;
 
-      chart.data(data);
+      chart.legend(false);
+
       chart.scale({
-        date: {
-          range: [0, 1],
-        },
-        temperature: {
-          min: 0,
+        count: {
           nice: true,
-          formatter: (val) => {
-            return `${val}%`;
-          }
         },
-      });
+        // date: {
+        //   range: [0, 1],
+        // },
+      })
 
-      chart.tooltip({
-        showCrosshairs: true, // 展示 Tooltip 辅助线
-        shared: true,
-      });
-
-      chart.line()
-        .position('date*temperature')
-        .label('temperature', (val) => {
-          return {
-            content: `${val}%`,
+      chart
+        .interval()
+        .position('date*count')
+        .color('count', (val) => {
+          if (val < 0) {
+            return '#36c361';
           }
+          return '#ff5957';
+        })
+        .label('count', (count) => {
+          return {
+            content: (item) => {
+              const {count} = item;
+              return `${count}亿`;
+            },
+          };
         });
-      chart.point().position('date*temperature');
 
       chart.render();
     }
@@ -88,10 +87,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
-.box-root {
-  background-color: #ffffff;
-  // border: solid 1px #000000;
-}
 
 </style>
