@@ -10,6 +10,7 @@ import ListView from './components/ListView';
 import ListView2 from './components/ListView2';
 import Detail from './components/Detail';
 import ImgToTxt from './components/cloud_baidu/imgToTxt';
+import Stock from './components/stockStatistics/index';
 
 Vue.use(VueRouter);
 Vue.use(ElementUI);
@@ -20,9 +21,11 @@ const router = new VueRouter({
   routes: [
     {
       path: '/', component: Index
-    }, {
+    }, 
+    {
       path: '/list1', component: ListView
-    }, {
+    }, 
+    {
       // 无效
       path: '/list2', 
       component: ListView2,
@@ -30,17 +33,23 @@ const router = new VueRouter({
         keepAlive: true,
         saveSrollTop: true,
       }
-    }, {
+    }, 
+    {
       path: '/list3', 
       component: ListView,
       meta:{
         keepAlive: true,
         saveSrollTop: true,
       }
-    }, {
+    }, 
+    {
       path: '/detail', component: Detail
-    }, {
+    }, 
+    {
       path: '/imgToTxt', component: ImgToTxt
+    },
+    {
+      path: '/stock', component: Stock
     }
   ],
   // 方法二添加

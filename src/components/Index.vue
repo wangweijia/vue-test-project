@@ -1,15 +1,12 @@
 <template>
-    <div>
+    <div class="page" >
         <router-link to="/list1">方法1，（方法1不行就试试方法2）</router-link>
         <br/>
-        <br/>
-        <!-- <router-link to="/list2">方法2</router-link>
-        <br/>
-        <a href="https://juejin.im/post/5db935e5f265da4d495c44b4">方法2外部链接</a> -->
-
-        <br/>
-        <br/>
         <router-link to="/list3">方法2，（再不行就没辙了）</router-link>
+        <br>
+        <router-link to="/imgToTxt">图片识别</router-link>
+        <br>
+        <router-link to="/stock" >股票数据统计</router-link>
     </div>
 </template>
 
@@ -20,6 +17,16 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
 
 </style>
