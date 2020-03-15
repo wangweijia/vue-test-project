@@ -1,5 +1,7 @@
 <template>
-  <router-view></router-view>
+  <div class="root" >
+      <router-view></router-view>
+  </div>
 </template>
 
 <script>
@@ -28,8 +30,20 @@ body {
 #app {
   width: 100%;
   height: 100%;
-  background-color: aqua;
+  /* background-color: aqua; */
   display: flex;
   flex-direction: column; 
 }
+
+.root {
+  padding: 0;
+  margin: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column; 
+}
+
 </style>
