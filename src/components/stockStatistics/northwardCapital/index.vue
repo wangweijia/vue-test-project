@@ -1,5 +1,5 @@
 <template>
-  <div ref="container" />
+  <div class="drView" ref="container" />
 </template>
 
 <script>
@@ -47,6 +47,7 @@ export default {
         container: container,
         autoFit: true,
         height: 500,
+        padding: 'auto'
       });
       chart.data(data);
       this.chart = chart;
@@ -57,9 +58,6 @@ export default {
         count: {
           nice: true,
         },
-        // date: {
-        //   range: [0, 1],
-        // },
       })
 
       chart
@@ -78,6 +76,9 @@ export default {
               return `${count}亿`;
             },
           };
+        }, {
+          type: 'base',
+          offset: 8,
         });
 
       chart.render();
@@ -87,5 +88,11 @@ export default {
 </script>
 
 <style lang="less" scoped>
+
+.drView {
+  // overflow: auto;
+  // padding: 10px;
+  margin: 10px;
+}
 
 </style>

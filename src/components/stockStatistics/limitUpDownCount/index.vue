@@ -57,7 +57,8 @@ export default {
         container: container,
         autoFit: true,
         height: 500,
-        padding: [10, 0, 40, 40]
+        // padding: [10, 0, 40, 40]
+        padding: 'auto'
       });
       chart.data(data);
       this.chart = chart;
@@ -84,6 +85,9 @@ export default {
               return `${count}只`;
             },
           };
+        },{
+          type: 'base',
+          offset: 7,
         })
         .adjust([
           {
