@@ -103,5 +103,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
+.test {
+  text-align: center;
+  background-color: red;
+}
 </style>

@@ -11,6 +11,9 @@
 
     <h1>涨跌停家数</h1>
     <LimitUpDownCount/>
+
+    <!-- 连板相关 -->
+    <LinkingBoard/>
   </div>
 </template>
 
@@ -18,14 +21,15 @@
 import Emotion from './emotion';
 import NorthwardCapital from './northwardCapital';
 import LimitUpDownCount from './limitUpDownCount';
+import LinkingBoard from './linkingBoard/index';
 
 export default {
   components: {
     Emotion,
     NorthwardCapital,
-    LimitUpDownCount
+    LimitUpDownCount,
+    LinkingBoard
   }
-
 }
 </script>
 
