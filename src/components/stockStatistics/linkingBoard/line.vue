@@ -28,7 +28,9 @@ export default {
   },
   methods: {
     getDate(promise) {
-      promise.then((res = []) => {
+      promise.then((data = []) => {
+        const cpData = JSON.parse(JSON.stringify(data));
+        const res = cpData.reverse();
         const datas = [];
         res.forEach((itemDay) => {
           const { date, rateList = [] } = itemDay;
