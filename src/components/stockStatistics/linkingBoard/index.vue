@@ -4,6 +4,8 @@
     <TableCount :dataList="dataList" />
     <h1>连板率</h1>
     <TableCentage :dataList="dataList" />
+    <h1>连板率</h1>
+    <LineView :dataList="dataList" />
   </div>
 </template>
 
@@ -11,11 +13,13 @@
 import Request from '../../../tools/request';
 import TableCount from './tableCount';
 import TableCentage from './tableCentage';
+import LineView from './line';
 
 export default {
   components: {
     TableCount,
-    TableCentage
+    TableCentage,
+    LineView
   },
   data() {
     return {
