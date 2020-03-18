@@ -2,16 +2,20 @@
   <div>
     <h1>连板数</h1>
     <TableCount :dataList="dataList" />
+    <h1>连板率</h1>
+    <TableCentage :dataList="dataList" />
   </div>
 </template>
 
 <script>
 import Request from '../../../tools/request';
 import TableCount from './tableCount';
+import TableCentage from './tableCentage';
 
 export default {
   components: {
-    TableCount
+    TableCount,
+    TableCentage
   },
   data() {
     return {
