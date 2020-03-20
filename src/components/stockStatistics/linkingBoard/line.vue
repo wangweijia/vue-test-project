@@ -32,22 +32,31 @@ export default {
         const cpData = JSON.parse(JSON.stringify(data));
         const res = cpData.reverse();
         const datas = [];
+
+        let maxL = 0;
+        res.forEach((itemDay) => {
+          const { rateList = [] } = itemDay;
+          if (rateList.length > maxL) {
+            maxL = rateList.length;
+          }
+        })
+
         res.forEach((itemDay) => {
           const { date, rateList = [] } = itemDay;
 
           const t = moment(Number(date)).format('MM月DD日');
-          rateList.forEach((item, index) => {
+          for (let index = 0; index < maxL; index++) {
+            const item = rateList[index] || 0;
             datas.push({
               time: t,
               value: Number((item * 100).toFixed(2)),
               type: `${index+1}进${index+2}`
             })
-          })
+            
+          }
         })
 
         this.lineData = datas;
-        // console.log('-line');
-        // console.log(datas);
         this.init(datas);
       })
     },

@@ -14,6 +14,9 @@
 
     <!-- 连板相关 -->
     <LinkingBoard/>
+
+    <h1>市场最高板</h1>
+    <LimitUpMaxCount/>
   </div>
 </template>
 
@@ -22,13 +25,15 @@ import Emotion from './emotion';
 import NorthwardCapital from './northwardCapital';
 import LimitUpDownCount from './limitUpDownCount';
 import LinkingBoard from './linkingBoard/index';
+import LimitUpMaxCount from './limitUpMaxCount/index';
 
 export default {
   components: {
     Emotion,
     NorthwardCapital,
     LimitUpDownCount,
-    LinkingBoard
+    LinkingBoard,
+    LimitUpMaxCount
   }
 }
 </script>
