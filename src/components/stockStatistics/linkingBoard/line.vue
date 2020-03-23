@@ -97,8 +97,7 @@ export default {
       chart
         .line()
         .position('time*value')
-        .color('type')
-        .shape('smooth');
+        .color('type');
 
       chart
         .point()
