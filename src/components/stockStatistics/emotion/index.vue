@@ -1,13 +1,22 @@
 <template>
-  <div ref="container" class="box-root" />
+  <ToImageView fileName="市场情绪">
+    <div>
+      <h1>市场情绪</h1>
+      <div ref="container" class="box-root" />
+    </div>
+  </ToImageView>
 </template>
 
 <script>
 import { Chart } from '@antv/g2';
+import ToImageView from '../../toImageView/index';
 import Request from '../../../tools/request';
 import moment from 'moment';
 
 export default {
+  components: {
+    ToImageView
+  },
   data() {
     return {
       data: [],

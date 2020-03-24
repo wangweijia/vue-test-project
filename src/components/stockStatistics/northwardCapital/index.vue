@@ -1,13 +1,22 @@
 <template>
-  <div class="drView" ref="container" />
+  <ToImageView fileName="北向资金" >
+    <div>
+      <h1>北向资金</h1>
+      <div class="drView" ref="container" />
+    </div>
+  </ToImageView>
 </template>
 
 <script>
 import { Chart } from '@antv/g2';
 import Request from '../../../tools/request';
+import ToImageView from '../../toImageView/index';
 import moment from 'moment';
 
 export default {
+  components: {
+    ToImageView
+  },
   data() {
     return {
       data: []

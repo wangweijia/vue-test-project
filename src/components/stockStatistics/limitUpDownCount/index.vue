@@ -1,13 +1,22 @@
 <template>
-  <div ref="container" />
+  <ToImageView fileName="涨跌停家数" >
+    <div>
+      <h1>涨跌停家数</h1>
+      <div ref="container" />
+    </div>
+  </ToImageView>  
 </template>
 
 <script>
 import { Chart } from '@antv/g2';
+import ToImageView from '../../toImageView/index';
 import Request from '../../../tools/request';
 import moment from 'moment';
 
 export default {
+  components: {
+    ToImageView 
+  },
   data() {
     return {
       data: []
